@@ -26,6 +26,7 @@ import {
   temperatureState,
   timezoneState,
   wifiState,
+  healthConnectState,
 } from "../../functions/atom";
 
 function FrequencyField(inputs) {
@@ -200,6 +201,15 @@ function FrequencyField(inputs) {
     });
   };
 
+  const [healthConnectData, setHealthConnectData] =
+    useRecoilState(healthConnectState);
+  const updateHealthConnectData = (fieldName, value) => {
+    setHealthConnectData({
+      ...healthConnectData,
+      [fieldName]: value,
+    });
+  };
+
   function updateStates(fieldName, value, mode) {
     if (mode === "sensor") {
       updateSensorData(fieldName, value);
@@ -264,6 +274,9 @@ function FrequencyField(inputs) {
     }
     if (mode === "wifi") {
       updateWifiData(fieldName, value);
+    }
+    if (mode === "healthConnect") {
+      updateHealthConnectData(fieldName, value);
     }
   }
 

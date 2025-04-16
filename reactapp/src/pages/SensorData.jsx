@@ -28,6 +28,7 @@ import {
   temperatureState,
   timezoneState,
   wifiState,
+  healthConnectState,
 } from "../functions/atom";
 import SensorComponent from "../components/SensorComponent/SensorComponent";
 import FrequencyField from "../components/FrequencyField/FrequencyField";
@@ -99,6 +100,9 @@ export default function SensorData() {
   const [proximityData, setProximityData] = useRecoilState(proximityState);
 
   const [wifiData, setWifiData] = useRecoilState(wifiState);
+
+  const [healthConnectData, setHealthConnectData] =
+    useRecoilState(healthConnectState);
 
   // eslint-disable-next-line react/no-unstable-nested-components
   function TextReader() {
@@ -901,6 +905,37 @@ export default function SensorData() {
       </Grid>
     );
   }
+  // eslint-disable-next-line react/no-unstable-nested-components
+  function SensorHealthConnectSubContent() {
+    return (
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid width="10%" />
+        <Grid width="70%">
+          <FrequencyField
+            id="frequency_health_connect"
+            title="Frequency Health Connect"
+            inputLabel="frequency in hours"
+            defaultNum={5}
+            description="How often (in hours) the app checks for new Health Connect data."
+            field="frequency_health_connect"
+            studyField={healthConnectData.frequency_health_connect}
+            modeState="healthConnect"
+          />
+
+          <FrequencyField
+            id="preperiod_health_connect"
+            title="Preperiod Health Connect"
+            inputLabel="preperiod in days"
+            defaultNum={0}
+            description="Number of days of past Health Connect data to fetch on the first read."
+            field="preperiod in days"
+            studyField={healthConnectData.preperiod_health_connect}
+            modeState="healthConnect"
+          />
+        </Grid>
+      </Grid>
+    );
+  }
 
   return (
     <ThemeProvider theme={customisedTheme}>
@@ -1305,6 +1340,23 @@ export default function SensorData() {
           />
 
           {sensorData.sensor_wifi ? SensorWifiSubContent() : <div />}
+        </div>
+
+        <div className="border">
+          <p className="title">Software Data</p>
+          <SensorComponent
+            sensorName="Health Connect"
+            sensorDescription="Health Connect data from the device."
+            stateField={sensorData.health_connect}
+            field="health_connect"
+            modeState="sensor"
+          />
+
+          {sensorData.health_connect ? (
+            SensorHealthConnectSubContent()
+          ) : (
+            <div />
+          )}
         </div>
 
         <Box sx={{ width: "100%" }} mt={5} marginBottom={5}>

@@ -154,3 +154,8 @@ export const dialogState = atom({
   key: "dialogState",
   default: { isOpen: false, title: "", content: "" },
 });
+
+export const healthConnectState = atom({
+  key: "healthConnectState",
+  default: {},
+});

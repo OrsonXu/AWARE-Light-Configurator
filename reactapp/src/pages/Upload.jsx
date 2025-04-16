@@ -32,6 +32,7 @@ import {
   temperatureState,
   timezoneState,
   wifiState,
+  healthConnectState,
 } from "../functions/atom";
 import customisedTheme from "../functions/theme";
 import Axios from "../functions/axiosSettings";
@@ -78,6 +79,7 @@ export default function Upload() {
   const setWifiData = useSetRecoilState(wifiState);
   const setTimezoneData = useSetRecoilState(timezoneState);
   const setCommunicationData = useSetRecoilState(communicationSensorState);
+  const setHealthConnectData = useSetRecoilState(healthConnectState);
 
   const getData = (file) => {
     fetch(file, {
@@ -189,6 +191,7 @@ export default function Upload() {
     const wifiData = {};
     const timezoneData = {};
     const communicationData = {};
+    const healthConnectData = {};
 
     for (let i = 0; i < jsonValue.sensors.length; i += 1) {
       const { setting, value } = jsonValue.sensors[i];
@@ -471,6 +474,15 @@ export default function Upload() {
           break;
         case "status_webservice":
           // default value
+          break;
+        case "status_health_connect":
+          sensorData.health_conenct = value;
+          break;
+        case "frequency_health_connect":
+          healthConnectData.frequency_health_connect = value;
+          break;
+        case "perperiod_health_connect":
+          healthConnectData.perPeriod = value;
           break;
         default:
       }

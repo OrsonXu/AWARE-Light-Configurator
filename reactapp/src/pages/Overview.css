@@ -1,32 +1,31 @@
 .title {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    color: black;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: black;
 }
 
 .field_name {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: black;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: black;
 }
 
 .value {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: black;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: black;
 }
 
 .border {
-    border: 2px outset #666464;
-    box-shadow: 3px 3px 5px gray;
-    border-radius: 5px;
-    padding: 0 1rem;
-    margin-top: 1rem;
+  border: 2px outset #666464;
+  box-shadow: 3px 3px 5px gray;
+  border-radius: 5px;
+  padding: 0 1rem;
+  margin-top: 1rem;
 }
-
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
@@ -55,21 +54,45 @@
 
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

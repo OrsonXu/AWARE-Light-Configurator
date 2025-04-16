@@ -27,10 +27,13 @@ import {
   temperatureState,
   timezoneState,
   wifiState,
+  healthConnectState,
 } from "../../functions/atom";
 
 export default function SensorComponent(inputs) {
   const [sensorData, setsensorData] = useRecoilState(sensorDataState);
+  // console.log("sensorData", sensorData);
+  // console.log("click!!!");
   const updateSensorData = (fieldName, value) => {
     setsensorData({
       ...sensorData,
@@ -201,6 +204,15 @@ export default function SensorComponent(inputs) {
     });
   };
 
+  const [healthConnectData, setHealthConnectData] =
+    useRecoilState(healthConnectState);
+  const updateHealthConnectData = (fieldName, value) => {
+    setHealthConnectData({
+      ...healthConnectData,
+      [fieldName]: value,
+    });
+  };
+
   function updateStates(fieldName, value, mode) {
     if (mode === "sensor") {
       updateSensorData(fieldName, value);
@@ -266,6 +278,9 @@ export default function SensorComponent(inputs) {
     if (mode === "wifi") {
       updateWifiData(fieldName, value);
     }
+    if (mode === "healthConnect") {
+      updateHealthConnectData(fieldName, value);
+    }
   }
 
   const { sensorName, sensorDescription, stateField, field, modeState } =
@@ -280,6 +295,7 @@ export default function SensorComponent(inputs) {
               checked={stateField || false}
               onChange={(_, checked) => {
                 updateStates(field.toString(), checked, modeState);
+                console.log("abcabc");
                 console.log(stateField, modeState);
               }}
             />

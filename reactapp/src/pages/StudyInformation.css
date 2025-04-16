@@ -1,34 +1,32 @@
 .title {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    color: black;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: black;
 }
 
 .explanation {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
-
-.validity{
-    font-size: 0.8rem;
+.validity {
+  font-size: 0.8rem;
 }
 
-.success{
-    color: green;
+.success {
+  color: green;
 }
 
-.error{
-    color: red;
+.error {
+  color: red;
 }
-
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #validation_message {
   visibility: hidden; /* Hidden by default. Visible on click */
   min-width: 250px; /* Set a default minimum width */
   margin-left: -125px; /* Divide value of min-width by 2 */
-  background-color: #D2042D; /* Black background color */
+  background-color: #d2042d; /* Black background color */
   color: #fff; /* White text color */
   text-align: center; /* Centered text */
   border-radius: 2px; /* Rounded borders */
@@ -50,27 +48,45 @@
 
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

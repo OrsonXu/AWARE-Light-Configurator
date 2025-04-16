@@ -45,6 +45,7 @@ import {
   temperatureState,
   timezoneState,
   wifiState,
+  healthConnectState,
 } from "../functions/atom";
 import {
   RANDOM_TRIGGERS,
@@ -92,6 +93,7 @@ export default function Main() {
   const communicationData = useRecoilValue(communicationSensorState);
   const studyId = useRecoilValue(studyIdState);
   const createTime = useRecoilValue(createTimeState);
+  const healthConnectData = useRecoilValue(healthConnectState);
   const [result, setResult] = useState({});
   const date = new Date().toJSON();
 
@@ -785,6 +787,24 @@ export default function Main() {
           value: wifiData.frequency_wifi ? wifiData.frequency_wifi : 60,
         },
 
+        // health connect
+        {
+          setting: "status_health_connect",
+          value: sensorData.health_connect ? sensorData.health_connect : false,
+        },
+        {
+          setting: "frequency_health_connect",
+          value: healthConnectData.frequency_health_connect
+            ? healthConnectData.frequency_health_connect
+            : 5,
+        },
+        {
+          setting: "preperiod_health_connect",
+          value: healthConnectData.perperiod_health_connect
+            ? healthConnectData.perperiod_health_connect
+            : 0,
+        },
+
         // default sensors
         { setting: "status_esm", value: true },
         { setting: "status_webservice", value: true },
@@ -1016,6 +1036,7 @@ export default function Main() {
             {displaySensors("sensor_rotation", "Rotation")}
             {displaySensors("sensor_temperature", "Temperature")}
             {displaySensors("sensor_sensor_wifi", "Wifi")}
+            {displaySensors("health_connect", "Health Connect")}
 
             <Grid
               container

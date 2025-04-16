@@ -859,3 +859,13 @@ CREATE TABLE IF NOT EXISTS `screentext` (
     PRIMARY KEY (`_id`),
     KEY `time_device` (`timestamp`,`device_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `healthconnect` (
+  `_id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `timestamp` double DEFAULT '0',
+  `device_id` varchar(150) DEFAULT '',
+  `type` varchar(150) DEFAULT '',
+  `value` varchar(500) DEFAULT '',
+  PRIMARY KEY (`_id`),
+  KEY `time_device` (`timestamp`,`device_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

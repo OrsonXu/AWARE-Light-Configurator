@@ -1,16 +1,16 @@
 .field_name {
-    font-size: 1rem;
-    color: black;
+  font-size: 1rem;
+  color: black;
 }
 
 .sensor_vertical_layout {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
 .explanation {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 /*.schedule_title {*/
 /*    margin-top: 1rem;*/
@@ -23,7 +23,6 @@
 /*    font-size: 1rem;*/
 /*    color: black;*/
 /*}*/
-
 
 /*.question_border {*/
 /*    border: 2px outset #666464;*/
