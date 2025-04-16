@@ -476,7 +476,7 @@ export default function StudyInformation() {
                     initializeDB();
                   }}
                 >
-                  INITIALIZE DATABASE Xiaowen
+                  INITIALIZE DATABASE
                 </Button>
               </Grid>
               <Grid>

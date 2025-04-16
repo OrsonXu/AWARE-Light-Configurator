@@ -32,8 +32,6 @@ import {
 
 export default function SensorComponent(inputs) {
   const [sensorData, setsensorData] = useRecoilState(sensorDataState);
-  // console.log("sensorData", sensorData);
-  // console.log("click!!!");
   const updateSensorData = (fieldName, value) => {
     setsensorData({
       ...sensorData,
@@ -295,7 +293,6 @@ export default function SensorComponent(inputs) {
               checked={stateField || false}
               onChange={(_, checked) => {
                 updateStates(field.toString(), checked, modeState);
-                console.log("abcabc");
                 console.log(stateField, modeState);
               }}
             />
