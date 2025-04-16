@@ -481,8 +481,8 @@ export default function Upload() {
         case "frequency_health_connect":
           healthConnectData.frequency_health_connect = value;
           break;
-        case "perperiod_health_connect":
-          healthConnectData.perPeriod = value;
+        case "preperiod_health_connect":
+          healthConnectData.preperiod_health_connect = value;
           break;
         default:
       }

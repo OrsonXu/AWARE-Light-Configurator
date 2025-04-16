@@ -800,8 +800,8 @@ export default function Main() {
         },
         {
           setting: "preperiod_health_connect",
-          value: healthConnectData.perperiod_health_connect
-            ? healthConnectData.perperiod_health_connect
+          value: healthConnectData.preperiod_health_connect
+            ? healthConnectData.preperiod_health_connect
             : 0,
         },
 

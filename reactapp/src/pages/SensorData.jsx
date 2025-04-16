@@ -927,8 +927,8 @@ export default function SensorData() {
             title="Preperiod Health Connect"
             inputLabel="preperiod in days"
             defaultNum={0}
-            description="Number of days of past Health Connect data to fetch on the first read."
-            field="preperiod in days"
+            description="Number of days of past Health Connect data to fetch on the first read.(maximum 30 days)"
+            field="preperiod_health_connect"
             studyField={healthConnectData.preperiod_health_connect}
             modeState="healthConnect"
           />
